@@ -1,0 +1,22 @@
+{
+  "name": "servus",
+  "version": "0.0.1",
+  "description": "Connect based web server & reverse proxy",
+  "main": "lib",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "bin": {
+    "servus": "bin/servus"
+  },
+  "preferGlobal": true,
+  "repository": "",
+  "author": "Shahar Talmi",
+  "license": "BSD",
+  "dependencies": {
+    "commander": "~1.2.0",
+    "connect": "~2.8.1",
+    "connect-xcors": "~0.5.2",
+    "proxy-middleware": "~0.4.0"
+  }
+}

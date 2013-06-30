@@ -1,0 +1,24 @@
+#!/usr/bin/env node
+
+'use strict';
+
+var cli = require('commander');
+var servus = require('../lib');
+
+cli
+    .usage('[options]')
+    .option('-c, --config [name]', 'Name of config to use')
+    .option('--source [name]', 'Name of folder for source files [default: src]')
+    .option('-s, --server [name]', 'Name of server we pretend to be [default: pita.wixpress]')
+    .option('-i, --ip [address]', 'Listen on this IP')
+    .option('-p, --port [port]', 'Port to listen')
+    .option('-t, --protocol [http|https]', 'Protocol to use for incoming connections')
+    .option('-q, --quite', 'Suppress excessive logging')
+    .option('-e, --externalip', 'Listen on first external IP available on this computer. Generates SLM.')
+    .option('--slm', 'Generate SLM with ip and port from current config.')
+    .parse(process.argv);
+
+// get the desired config file
+var baseConfigFolder = './config/' + 'config.' + (cli.config || 'src') + '.json';
+
+servus(baseConfigFolder);
