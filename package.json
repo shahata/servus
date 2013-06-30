@@ -1,6 +1,6 @@
 {
   "name": "servus",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Connect based web server & reverse proxy",
   "main": "lib",
   "scripts": {
@@ -8,6 +8,10 @@
   },
   "bin": {
     "servus": "bin/servus"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/shahata/servus"
   },
   "preferGlobal": true,
   "repository": "",
