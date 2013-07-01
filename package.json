@@ -1,6 +1,6 @@
 {
   "name": "servus",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Connect based web server & reverse proxy",
   "main": "lib",
   "scripts": {
@@ -9,18 +9,15 @@
   "bin": {
     "servus": "bin/servus"
   },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/shahata/servus"
-  },
+  "repository": "git@github.com:shahata/servus.git",
   "preferGlobal": true,
-  "repository": "",
   "author": "Shahar Talmi",
   "license": "BSD",
   "dependencies": {
     "commander": "~1.2.0",
     "connect": "~2.8.1",
     "connect-xcors": "~0.5.2",
-    "proxy-middleware": "~0.4.0"
+    "proxy-middleware": "~0.4.0",
+    "resolve": "~0.4.0"
   }
 }
