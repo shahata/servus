@@ -4,7 +4,14 @@ servus
 
 Servus is a simple [connect](http://www.senchalabs.org/connect/) based reverse proxy.
 
+    $ npm install -g servus
+    $ servus
+
 Map urls and filesystem folders to one servus server by simply adding *servus.conf.js* to your project and running **servus**.
+ * It listens on the configured port and will find an available port in case the port is taken.
+ * It automatically restart when the configuration file is updated.
+ * It adds cors headers, gzip compress, navigates directories
+ * It can load any [connect plugin](https://github.com/senchalabs/connect/wiki) you want, no matter if it is installed globally or locally (see syntax below)
 
 ```js
 module.exports = {
@@ -24,6 +31,12 @@ module.exports = {
     
     //local filesystem
     '/services/wix-dashboard-ng-static/': '../wix-dashboard-ng-static/src/main/static/'
+    
+    //need something special?
+    //'/mapped/path/': {plugin: 'some-connect-plugin', args: [arg1, arg2, ...]}
+    
+    //or just add you connect function inline
+    //'/mapped/path/': {plugin: function() {}, args: [arg1, arg2, ...]}
   }
 };
 ```
