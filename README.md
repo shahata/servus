@@ -13,6 +13,8 @@ Map urls and filesystem folders to one servus server by simply adding *servus.co
  * It adds cors headers, gzip compress, navigates directories.
  * It can load any [connect plugin](https://github.com/senchalabs/connect/wiki) you want, no matter if it is installed globally or locally. (see syntax below)
 
+Sample *servus.conf.js* file:
+
 ```js
 module.exports = {
   port: 8000,
