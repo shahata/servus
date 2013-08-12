@@ -9,9 +9,9 @@ Servus is a simple [connect](http://www.senchalabs.org/connect/) based reverse p
 
 Map urls and filesystem folders to one servus server by simply adding *servus.conf.js* to your project and running **servus**.
  * It listens on the configured port and will find an available port in case the port is taken.
- * It automatically restart when the configuration file is updated.
- * It adds cors headers, gzip compress, navigates directories
- * It can load any [connect plugin](https://github.com/senchalabs/connect/wiki) you want, no matter if it is installed globally or locally (see syntax below)
+ * It automatically restarts when the configuration file is updated.
+ * It adds cors headers, gzip compress, navigates directories.
+ * It can load any [connect plugin](https://github.com/senchalabs/connect/wiki) you want, no matter if it is installed globally or locally. (see syntax below)
 
 ```js
 module.exports = {
