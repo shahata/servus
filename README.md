@@ -13,6 +13,7 @@ Map urls and filesystem folders to one servus server by simply adding *servus.co
  * It automatically restarts when the configuration file is updated.
  * It adds cors headers, gzip compress, navigates directories.
  * It can load any [connect plugin](https://github.com/senchalabs/connect/wiki) you want, no matter if it is installed globally or locally. (see syntax below)
+ * If *servus.conf.js* does not exist, it will run a simple web server, serving the current folder.
 
 Sample *servus.conf.js* file:
 
