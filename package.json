@@ -1,6 +1,6 @@
 {
   "name": "servus",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "description": "Connect based web server & reverse proxy",
   "main": "lib",
   "scripts": {
@@ -14,13 +14,14 @@
   "author": "Shahar Talmi",
   "license": "BSD",
   "dependencies": {
-    "commander": "~1.2.0",
     "connect": "~2.8.1",
     "connect-xcors": "~0.5.2",
     "proxy-middleware": "~0.4.0",
     "resolve": "~0.4.0",
     "update-notifier": "~0.1.5",
     "open": "0.0.4",
-    "chalk": "~0.2.1"
+    "chalk": "~0.2.1",
+    "lodash": "~2.0.0",
+    "nopt": "~2.1.2"
   }
 }

@@ -6,7 +6,7 @@ module.exports = {
   port: 80,
   gzip: true,
   cors: true,
-  open: 'http://localhost/',
+  open: 'http://localhost:<%= port %>/',
 
   aliases: {
     '/': '../../Downloads',

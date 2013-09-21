@@ -9,6 +9,7 @@ Servus is a simple [connect](http://www.senchalabs.org/connect/) based reverse p
 
 Map urls and filesystem folders to one servus server by simply adding *servus.conf.js* to your project and running **servus**.
  * It listens on the configured port and will find an available port in case the port is taken.
+ * It can automatically open a browser window with a pre-defined URL when invoked.
  * It automatically restarts when the configuration file is updated.
  * It adds cors headers, gzip compress, navigates directories.
  * It can load any [connect plugin](https://github.com/senchalabs/connect/wiki) you want, no matter if it is installed globally or locally. (see syntax below)
@@ -17,26 +18,31 @@ Sample *servus.conf.js* file:
 
 ```js
 module.exports = {
-  port: 8000,
-  gzip: true,
-  cors: true,
+  port: 8000, //override in command line with --port ###
+  gzip: true, //override in command line with --gzip or --no-gzip
+  cors: true, //override in command line with --cors or --no-cors
+  open: 'http://localhost:<%= port %>', //override in command line with --open URL or --no-open
+
+  //add custom attributes and use them as template attributes throughout your config
+  //override in command line using 'servus --stagingServer=sake' (the = is important)
+  stagingServer: 'pizza',
 
   aliases: {
     //remote api server
-    '/_api/': 'http://www.pizza.wixpress.com/_api/',
-    
+    '/_api/': 'http://www.<%= stagingServer %>.wixpress.com/_api/',
+
     //local 'grunt server'
     '/_partials/wix-contacts-statics/latest/': 'http://localhost:9000/',
-    
+
     //local tomcat server
     '/create/my-account': 'http://localhost:8080/wix-dashboard-ng-webapp/dashboard/',
-    
+
     //local filesystem
     '/services/wix-dashboard-ng-static/': '../wix-dashboard-ng-static/src/main/static/'
-    
+
     //need something special?
     //'/mapped/path/': {plugin: 'some-connect-plugin', args: [arg1, arg2, ...]}
-    
+
     //or just add you connect function inline
     //'/mapped/path/': {plugin: function() {}, args: [arg1, arg2, ...]}
   }
