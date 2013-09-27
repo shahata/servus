@@ -19,7 +19,7 @@ Sample *servus.conf.js* file:
 
 ```js
 module.exports = {
-  port: 8000, //override in command line with --port ###
+  port: 9000, //override in command line with --port ###
   gzip: true, //override in command line with --gzip or --no-gzip
   cors: true, //override in command line with --cors or --no-cors
   open: 'http://localhost:<%= port %>', //override in command line with --open URL or --no-open

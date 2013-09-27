@@ -2,6 +2,8 @@
 
 'use strict';
 
+var fs = require('fs');
+var path = require('path');
 var nopt = require('nopt');
 var chalk = require('chalk');
 var servus = require('../lib');
@@ -19,7 +21,9 @@ var knownOpts = {
     port: Number,
     cors: Boolean,
     gzip: Boolean,
-    open: String
+    open: String,
+    init: Boolean,
+    version: Boolean
   },
   shortOpts = {
     h: ['--help'],
@@ -39,6 +43,24 @@ if (options.help) {
               chalk.magenta('Сервус')+') is a '+chalk.green('salutation')+' used in many parts of '+chalk.green('Central')+' and '+
               chalk.green('Eastern Europe')+'. It is a word of greeting or parting like the Italian "'+chalk.yellow('Ciao')+'".\n\n'+
               chalk.red('Read more at: ')+chalk.magenta('https://github.com/shahata/servus')+'\n');
+} else if (options.version) {
+  var pkg = require('../package.json');
+  console.log(chalk.yellow.bold(pkg.name)+' '+chalk.cyan(pkg.version)+' by '+chalk.green(pkg.author));
+  console.log(chalk.red('Read more at: ')+chalk.magenta('https://github.com/shahata/servus'));
+} else if (options.init) {
+  var filename = 'servus.conf.js';
+  fs.createReadStream(path.join(__dirname, '..', filename))
+    .on('error', function () {
+      console.log(chalk.red('Error')+' generating '+chalk.bold(filename));
+    })
+    .on('end', function () {
+      console.log(chalk.bold(filename)+' '+chalk.green('successfully created.'));
+    })
+    .pipe(fs.createWriteStream(filename)
+      .on('error', function () {
+        console.log(chalk.red('Error')+' creating '+chalk.bold(filename));
+      })
+    );
 } else {
   servus(options);
 }
