@@ -45,7 +45,7 @@ if (options.help) {
               chalk.red('Read more at: ')+chalk.magenta('https://github.com/shahata/servus')+'\n');
 } else if (options.version) {
   var pkg = require('../package.json');
-  console.log(chalk.yellow.bold(pkg.name)+' '+chalk.cyan(pkg.version)+' by '+chalk.green(pkg.author));
+  console.log(chalk.yellow.bold(pkg.name)+' '+chalk.cyan(pkg.version)+' by '+chalk.green(pkg.author.name));
   console.log(chalk.red('Read more at: ')+chalk.magenta('https://github.com/shahata/servus'));
 } else if (options.init) {
   var filename = 'servus.conf.js';

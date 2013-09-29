@@ -1,6 +1,6 @@
 {
   "name": "servus",
-  "version": "0.0.8",
+  "version": "0.0.9",
   "description": "Connect based web server & reverse proxy",
   "main": "lib",
   "scripts": {
@@ -9,9 +9,14 @@
   "bin": {
     "servus": "bin/servus"
   },
-  "repository": "git@github.com:shahata/servus.git",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:shahata/servus.git"
+  },
   "preferGlobal": true,
-  "author": "Shahar Talmi",
+  "author": {
+    "name": "Shahar Talmi"
+  },
   "license": "BSD",
   "dependencies": {
     "connect": "~2.9.0",
