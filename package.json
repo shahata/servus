@@ -1,6 +1,6 @@
 {
   "name": "servus",
-  "version": "0.0.9",
+  "version": "0.0.10",
   "description": "Connect based web server & reverse proxy",
   "main": "lib",
   "scripts": {
@@ -28,5 +28,10 @@
     "chalk": "~0.2.1",
     "lodash": "~2.1.0",
     "nopt": "~2.1.2"
+  },
+  "devDependencies": {
+    "grunt": "~0.4.1",
+    "grunt-release": "~0.6.0",
+    "load-grunt-tasks": "~0.2.0"
   }
 }
